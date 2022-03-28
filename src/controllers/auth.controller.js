@@ -8,7 +8,7 @@ const generateToken = (user) => {
   return jwt.sign({ user }, process.env.SECRETE_KEY);
 };
 
-const register = (req, res) => {
+const register = async (req, res) => {
   try {
     let user = User.findOne({ email: req.body.email });
 
@@ -16,7 +16,7 @@ const register = (req, res) => {
       return res.status(500).send("Invalid Email or Password");
     }
 
-    user = User.create(req.body);
+    user = await User.create(req.body);
 
     token = generateToken(user);
 
