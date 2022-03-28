@@ -1,0 +1,35 @@
+Today we will create a TODOs system which will have users and their todos
+MODELS
+User Model
+
+firstName ( String, required)
+lastName ( String, optional)
+email ( String, required)
+password ( String, required)
+createdAt
+updatedAt
+
+
+Todo Model
+
+title ( String, required )
+createdAt
+updatedAt
+
+
+
+RELATIONSHIPS
+
+User and Todos have a relationship
+
+HINT :- the relationship is same as Post and Comments
+
+TASKS TO BE PERFORMED IN TODAYS EVALUATION
+
+POST /register endpoint to create new users
+POST /login endpoint to login the user
+GET /todos endpoint that returns all todos of the logged in user
+POST /todos endpoint for the logged in user to create a todo
+GET /todos/:id endpoint where if the todo user is same as logged in user then it shows the todo else it will throw an error with status code 401
+PATCH /todos/:id endpoint where if the todo user is the same as logged in user then user can update the todo else it will throw an error with status code 401
+DELETE /todos/:id endpoint where if the todo user is the same as logged in user then user can delete the todo else it will throw an error with status code 401
